@@ -1,0 +1,19 @@
+# Block massive dataset & temporary DuckDB files
+*.csv
+*.parquet
+*.duckdb
+*.wal
+data/
+raw_data/
+
+# Allow small macro lookup CSV & generated chart PNGs
+!data/country_macro_lookup.csv
+!outputs/charts/*.png
+
+# Python & OS clutter
+__pycache__/
+.venv/
+venv/
+.ipynb_checkpoints/
+.DS_Store
+Thumbs.db
