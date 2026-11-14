@@ -6,8 +6,11 @@
 data/
 raw_data/
 
-# Allow small macro lookup CSV & generated chart PNGs
-!data/country_macro_lookup.csv
+# Allow lightweight aggregated summary CSVs & generated chart PNGs
+!outputs/
+!outputs/tables/
+!outputs/tables/*.csv
+!outputs/charts/
 !outputs/charts/*.png
 
 # Python & OS clutter
