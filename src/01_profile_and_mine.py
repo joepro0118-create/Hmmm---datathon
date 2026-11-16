@@ -1,4 +1,5 @@
 import os
+import sys
 import time
 import duckdb
 import pandas as pd
@@ -10,8 +11,9 @@ pd.set_option('display.max_colwidth', 80)
 
 # STRICT COMPLIANCE: Use ONLY the raw dataset provided by Swift.
 # Zero external CSVs, GDP tables, timezone files, or external APIs.
-CSV_PATH = r"C:\Users\Joe\Downloads\swift_umdac_datathon_2026_fictitious_payment_data\swift_umdac_datathon_2026_fictitious_payment_data.csv"
-SAMPLE_PARQUET_PATH = r"c:\Users\Joe\OneDrive\Desktop\Hmmm-datathon\data\sample_200k.parquet"
+DEFAULT_CSV_PATH = r"C:\Users\Joe\Downloads\swift_umdac_datathon_2026_fictitious_payment_data\swift_umdac_datathon_2026_fictitious_payment_data.csv"
+CSV_PATH = sys.argv[1] if len(sys.argv) > 1 else DEFAULT_CSV_PATH
+SAMPLE_PARQUET_PATH = os.path.join("data", "sample_200k.parquet")
 
 
 def main():

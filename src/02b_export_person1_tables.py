@@ -12,14 +12,16 @@ STRICT COMPLIANCE ATTESTATION (Rubric 3.4):
 """
 
 import os
+import sys
 import time
 import duckdb
 import pandas as pd
 
-RAW_CSV_PATH = (
+DEFAULT_RAW_CSV_PATH = (
     r"C:\Users\Joe\Downloads\swift_umdac_datathon_2026_fictitious_payment_data"
     r"\swift_umdac_datathon_2026_fictitious_payment_data.csv"
 )
+RAW_CSV_PATH = sys.argv[1] if len(sys.argv) > 1 else DEFAULT_RAW_CSV_PATH
 OUTPUT_TABLES_DIR = os.path.join("outputs", "tables")
 
 
